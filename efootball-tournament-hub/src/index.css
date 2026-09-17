@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="neon-pitch"] {
+  --theme-bg: #050806;
+  --theme-bg-spotlight: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 255, 135, 0.18), transparent 70%), radial-gradient(circle at 100% 100%, rgba(0, 255, 135, 0.08), transparent 45%);
+  --theme-card: rgba(11, 19, 15, 0.92);
+  --theme-card-subtle: rgba(16, 28, 22, 0.75);
+  --theme-border: rgba(0, 255, 135, 0.18);
+  --theme-border-hover: #00FF87;
+  --theme-accent: #00FF87;
+  --theme-accent-contrast: #001A0E;
+  --theme-accent-glow: rgba(0, 255, 135, 0.42);
+  --theme-accent-glow-subtle: rgba(0, 255, 135, 0.16);
+  --theme-badge-bg: rgba(0, 255, 135, 0.12);
+  --theme-badge-border: rgba(0, 255, 135, 0.35);
+  --theme-spotlight: rgba(0, 255, 135, 0.2);
+}
+
+[data-theme="champions-gold"] {
+  --theme-bg: #070604;
+  --theme-bg-spotlight: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 196, 44, 0.16), transparent 70%), radial-gradient(circle at 100% 100%, rgba(255, 196, 44, 0.08), transparent 45%);
+  --theme-card: rgba(19, 16, 11, 0.92);
+  --theme-card-subtle: rgba(27, 23, 16, 0.75);
+  --theme-border: rgba(255, 196, 44, 0.18);
+  --theme-border-hover: #FFC42C;
+  --theme-accent: #FFC42C;
+  --theme-accent-contrast: #1C1400;
+  --theme-accent-glow: rgba(255, 196, 44, 0.42);
+  --theme-accent-glow-subtle: rgba(255, 196, 44, 0.16);
+  --theme-badge-bg: rgba(255, 196, 44, 0.12);
+  --theme-badge-border: rgba(255, 196, 44, 0.35);
+  --theme-spotlight: rgba(255, 196, 44, 0.2);
+}
+
+[data-theme="cyber-cyan"] {
+  --theme-bg: #04070D;
+  --theme-bg-spotlight: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 229, 255, 0.16), transparent 70%), radial-gradient(circle at 100% 100%, rgba(0, 229, 255, 0.08), transparent 45%);
+  --theme-card: rgba(10, 17, 29, 0.92);
+  --theme-card-subtle: rgba(15, 25, 41, 0.75);
+  --theme-border: rgba(0, 229, 255, 0.18);
+  --theme-border-hover: #00E5FF;
+  --theme-accent: #00E5FF;
+  --theme-accent-contrast: #00161F;
+  --theme-accent-glow: rgba(0, 229, 255, 0.42);
+  --theme-accent-glow-subtle: rgba(0, 229, 255, 0.16);
+  --theme-badge-bg: rgba(0, 229, 255, 0.12);
+  --theme-badge-border: rgba(0, 229, 255, 0.35);
+  --theme-spotlight: rgba(0, 229, 255, 0.2);
+}
+
+[data-theme="crimson-strike"] {
+  --theme-bg: #080305;
+  --theme-bg-spotlight: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 36, 83, 0.18), transparent 70%), radial-gradient(circle at 100% 100%, rgba(255, 36, 83, 0.08), transparent 45%);
+  --theme-card: rgba(21, 10, 16, 0.92);
+  --theme-card-subtle: rgba(30, 15, 23, 0.75);
+  --theme-border: rgba(255, 36, 83, 0.18);
+  --theme-border-hover: #FF2453;
+  --theme-accent: #FF2453;
+  --theme-accent-contrast: #1F0008;
+  --theme-accent-glow: rgba(255, 36, 83, 0.42);
+  --theme-accent-glow-subtle: rgba(255, 36, 83, 0.16);
+  --theme-badge-bg: rgba(255, 36, 83, 0.12);
+  --theme-badge-border: rgba(255, 36, 83, 0.35);
+  --theme-spotlight: rgba(255, 36, 83, 0.2);
+}
+
+[data-theme="tokyo-violet"] {
+  --theme-bg: #06040B;
+  --theme-bg-spotlight: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(186, 92, 255, 0.18), transparent 70%), radial-gradient(circle at 100% 100%, rgba(186, 92, 255, 0.08), transparent 45%);
+  --theme-card: rgba(17, 11, 31, 0.92);
+  --theme-card-subtle: rgba(25, 17, 45, 0.75);
+  --theme-border: rgba(186, 92, 255, 0.18);
+  --theme-border-hover: #BA5CFF;
+  --theme-accent: #BA5CFF;
+  --theme-accent-contrast: #18002E;
+  --theme-accent-glow: rgba(186, 92, 255, 0.42);
+  --theme-accent-glow-subtle: rgba(186, 92, 255, 0.16);
+  --theme-badge-bg: rgba(186, 92, 255, 0.12);
+  --theme-badge-border: rgba(186, 92, 255, 0.35);
+  --theme-spotlight: rgba(186, 92, 255, 0.2);
+}
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--theme-bg);
+  }
+}
+
+.font-display {
+  font-family: 'Chakra Petch', system-ui, sans-serif;
+}
+
+/* Atmospheric Stadium Pitch Texture */
+.stadium-canvas {
+  background-color: var(--theme-bg);
+  background-image: 
+    var(--theme-bg-spotlight),
+    radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 56px 56px, 56px 56px;
+  background-position: top center, center center, center center, center center;
+}
+
+/* Glassmorphic card styling with backdrop blur */
+.card-aesthetic {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Smooth mobile touch scrolling */
+* {
+  touch-action: manipulation;
+}
+
+/* Custom subtle dark scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-border-hover);
+}
+
+/* Bento aesthetic dynamic glows and indicators */
+.bento-glow {
+  box-shadow: 0 0 24px var(--theme-accent-glow);
+}
+
+.bento-glow-sm {
+  box-shadow: 0 0 14px var(--theme-accent-glow-subtle);
+}

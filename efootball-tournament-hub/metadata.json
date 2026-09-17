@@ -1,0 +1,6 @@
+{
+  "name": "PES MASTER",
+  "description": "Android-optimized dark theme registration portal for PES MASTER 1 vs 1 and Mega Tournaments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
